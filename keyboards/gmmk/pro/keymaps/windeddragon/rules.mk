@@ -8,4 +8,7 @@ VIAL_INSECURE = no
 DEBOUNCE_TYPE = asym_eager_defer_pk
 # Reduce final size
 LTO_ENABLE = yes
-
+QMK_SETTINGS = no
+TAP_DANCE_ENABLE = no
+COMBO_ENABLE = no
+KEY_OVERRIDE_ENABLE = no

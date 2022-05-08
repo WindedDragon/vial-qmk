@@ -15,6 +15,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include QMK_KEYBOARD_H
+#include <stdio.h>
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -54,13 +55,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 // Caps lock indicator
-void rgb_matrix_indicators_user(void) {
- led_t led_state = host_keyboard_led_state();
-  // Change side LEDs, start at index of 82 and end at 97
-if (led_state.caps_lock) {
-  for (uint8_t i = 82; i < 98; i++)
-    {
-      rgb_matrix_set_color(i, 0xFF, 0xFF, 0xFF);
+// void rgb_matrix_indicators_user(void) {
+//  led_t led_state = host_keyboard_led_state();
+//   // Change side LEDs, start at index of 82 and end at 97
+// if (led_state.caps_lock) {
+//   for (uint8_t i = 82; i < 98; i++)
+//     {
+//       rgb_matrix_set_color(i, 0xFF, 0xFF, 0xFF);
+//     }
+// }
+// }
+void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+if (IS_HOST_LED_ON(USB_LED_CAPS_LOCK)) {
+        RGB_MATRIX_INDICATOR_SET_COLOR(3, 0, 255, 0); //capslock key
+		RGB_MATRIX_INDICATOR_SET_COLOR(67, 0, 255, 0); //Side led 01
+		RGB_MATRIX_INDICATOR_SET_COLOR(70, 0, 255, 0); //Side led 02
+		RGB_MATRIX_INDICATOR_SET_COLOR(73, 0, 255, 0); //Side led 03
+		RGB_MATRIX_INDICATOR_SET_COLOR(76, 0, 255, 0); //Side led 04
+		RGB_MATRIX_INDICATOR_SET_COLOR(80, 0, 255, 0); //Side led 05
+		RGB_MATRIX_INDICATOR_SET_COLOR(83, 0, 255, 0); //Side led 06
+		RGB_MATRIX_INDICATOR_SET_COLOR(87, 0, 255, 0); //Side led 07
+		RGB_MATRIX_INDICATOR_SET_COLOR(91, 0, 255, 0); //Side led 08
+        // sleep(1);
+        // RGB_MATRIX_INDICATOR_SET_COLOR(3, 0, 0, 0); //capslock key
+		// RGB_MATRIX_INDICATOR_SET_COLOR(67, 0, 0, 0); //Side led 01
+		// RGB_MATRIX_INDICATOR_SET_COLOR(70, 0, 0, 0); //Side led 02
+		// RGB_MATRIX_INDICATOR_SET_COLOR(73, 0, 0, 0); //Side led 03
+		// RGB_MATRIX_INDICATOR_SET_COLOR(76, 0, 0, 0); //Side led 04
+		// RGB_MATRIX_INDICATOR_SET_COLOR(80, 0, 0, 0); //Side led 05
+		// RGB_MATRIX_INDICATOR_SET_COLOR(83, 0, 0, 0); //Side led 06
+		// RGB_MATRIX_INDICATOR_SET_COLOR(87, 0, 0, 0); //Side led 07
+		// RGB_MATRIX_INDICATOR_SET_COLOR(91, 0, 0, 0); //Side led 08
     }
-}
 }
