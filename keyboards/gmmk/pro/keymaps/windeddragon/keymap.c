@@ -53,6 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+// Caps lock indicator
 void rgb_matrix_indicators_user(void) {
  led_t led_state = host_keyboard_led_state();
   // Change side LEDs, start at index of 82 and end at 97
