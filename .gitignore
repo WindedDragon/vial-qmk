@@ -61,7 +61,7 @@ CMakeLists.txt
 !windeddragon-vial-qmk.code-workspace
 .stfolder
 .tags
-.vscode/c_cpp_properties.json
+# .vscode/c_cpp_properties.json
 .vscode/ipch/
 .vscode/last.sql
 .vscode/launch.json
